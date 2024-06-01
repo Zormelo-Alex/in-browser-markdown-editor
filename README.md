@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Zormelo-Alex/in-browser-markdown-editor)
-- Live Site URL: [Add live site URL here](https://markdown-editor-ivory.vercel.app/)
+- Solution URL: [GitHub repo](https://github.com/Zormelo-Alex/in-browser-markdown-editor)
+- Live Site URL: [Markdown Url](https://markdown-editor-ivory.vercel.app/)
 
 ### Built with
 
