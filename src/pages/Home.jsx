@@ -7,7 +7,7 @@ const Home = ({ selected, handleTextChange, isEmpty, setNav, isNav }) => {
   const [isPreview, setisPreview] = useState(true);
 
   return (
-    <div className="text-black pt-[3.4rem] bg-white dark:bg-[#151619] min-h-screen dark:text-white">
+    <div className="text-black pt-[3.4rem] bg-white dark:bg-[#151619] min-h-[100dvh] dark:text-white">
       <div className="bg-[#F5F5F5] dark:bg-[#1D1F22] flex justify-between py-2 px-4 items-center md:hidden">
         <h4 className="font-medium text-[14px] uppercase tracking-widest">
           {isPreview ? "Preview" : "MarkDown"}
