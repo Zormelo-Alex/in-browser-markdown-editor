@@ -58,3 +58,7 @@ textarea::-webkit-scrollbar{
   width: 0;
   height: 0;
 }
+.dont-show::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}

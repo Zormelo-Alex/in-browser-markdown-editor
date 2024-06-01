@@ -29,7 +29,7 @@ const SideNav = ({
         {" "}
         + New document
       </button>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 max-h-[60dvh] overflow-y-scroll dont-show">
         {data &&
           data.map((item, index) => (
             <div

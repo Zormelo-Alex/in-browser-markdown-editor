@@ -4,8 +4,8 @@ import SideNav from "./components/SideNav";
 import Home from "./pages/Home";
 import data from "./data.json";
 import DeleteModal from "./components/DeleteModal";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const storedData = localStorage.getItem("markdown-data");
@@ -51,7 +51,7 @@ function App() {
     setDocumentData((prev) =>
       prev.map((item, index) => (index == selectedID ? selected : item))
     );
-    toast.success("Document saved successfully!")
+    toast.success("Document saved successfully!");
   };
 
   const handleAdd = async () => {
@@ -69,7 +69,7 @@ function App() {
     setDocumentData([...documentData, data]);
     setSelected(data);
     setSelectedID(documentData.length);
-    toast.info("New document created.")
+    toast.info("New document created.");
   };
 
   const handleDelete = () => {
@@ -77,7 +77,7 @@ function App() {
     setDocumentData(filter);
     setSelectedID(0);
     setModalOpen(false);
-    toast.success("Document deleted!")
+    toast.success("Document deleted!");
   };
 
   // console.log(documentData)
@@ -105,7 +105,7 @@ function App() {
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer position="bottom-right"/>
       <div className="w-full h-full bg-gray-200">
         <div className="flex min-h-screen relative overflow-x-hidden">
           <div className="fixed h-screen">
@@ -137,13 +137,19 @@ function App() {
                 isEmpty={isEmpty}
               />
             </div>
-            <Home
-              selected={selected}
-              handleTextChange={handleTextUpdate}
-              isEmpty={isEmpty}
-              isNav={isNavOpen}
-              setNav={setIsNavOpen}
-            />
+            <div onClick={()=> {
+              if(isNavOpen){
+                setIsNavOpen(false)
+              }
+            }}>
+              <Home
+                selected={selected}
+                handleTextChange={handleTextUpdate}
+                isEmpty={isEmpty}
+                isNav={isNavOpen}
+                setNav={setIsNavOpen}
+              />
+            </div>
             <DeleteModal
               show={isModalOpen && !isEmpty}
               onClose={() => setModalOpen(false)}
