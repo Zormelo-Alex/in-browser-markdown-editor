@@ -4,6 +4,8 @@ import SideNav from "./components/SideNav";
 import Home from "./pages/Home";
 import data from "./data.json";
 import DeleteModal from "./components/DeleteModal";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const storedData = localStorage.getItem("markdown-data");
@@ -49,11 +51,10 @@ function App() {
     setDocumentData((prev) =>
       prev.map((item, index) => (index == selectedID ? selected : item))
     );
-    console.log("Document saved successfully!");
+    toast.success("Document saved successfully!")
   };
 
   const handleAdd = async () => {
-    console.log("Item added");
     const date = new Date();
     const day = String(date.getDate()).padStart(2, "0");
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -68,7 +69,7 @@ function App() {
     setDocumentData([...documentData, data]);
     setSelected(data);
     setSelectedID(documentData.length);
-    console.log("New document created.");
+    toast.info("New document created.")
   };
 
   const handleDelete = () => {
@@ -76,7 +77,7 @@ function App() {
     setDocumentData(filter);
     setSelectedID(0);
     setModalOpen(false);
-    console.log("Document deleted!");
+    toast.success("Document deleted!")
   };
 
   // console.log(documentData)
@@ -104,6 +105,7 @@ function App() {
 
   return (
     <>
+    <ToastContainer />
       <div className="w-full h-full bg-gray-200">
         <div className="flex min-h-screen relative overflow-x-hidden">
           <div className="fixed h-screen">

@@ -12,7 +12,7 @@ const SideNav = ({
   isEmpty
 }) => {
   return (
-    <div className="bg-primaryDark h-full relative w-[65dvw] md:w-[35dvw] lg:w-[20dvw] p-4 pt-8">
+    <div className="bg-primaryDark h-[100dvh] relative w-[65dvw] md:w-[35dvw] lg:w-[20dvw] p-4 pt-8">
       <div className="h-[14px]">
         <img src={logo} className="h-full object-cover" alt="logo" />
       </div>
