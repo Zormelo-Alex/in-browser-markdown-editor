@@ -12,7 +12,7 @@ export default {
         secondaryDark: "#35393F",
         textSecondary: "#7C8187",
         buttonPrimary: "#E46643",
-        primaryHover: "#0F3058"
+        primaryHover: "#F39765"
       }
     },
   },

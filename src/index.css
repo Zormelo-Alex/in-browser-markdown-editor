@@ -2,10 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body{
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+.markdown > * {
+  all: revert;
+}
+.markdown blockquote {
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  margin: 0;
+  padding: 10px;
+  border-left: 3px #E46643 solid;
+}
+.markdown a {
+  text-decoration: underline;
+}
+.markdown h1 {
+  font-size: 32px;
+}
+.markdown h2 {
+  font-size: 28px;
+}
+.markdown h3 {
+  font-size: 24px;
+}
+.markdown h4 {
+  font-size: 20px;
+}
+.markdown h5 {
+  font-size: 16px;
+}
+.markdown h6 {
+  color: #E46643;
+  font-size: 14px;
+}
+.markdown code {
+  font-weight: 600;
+  font-size: 14px;
+}
+.markdown pre {
+  background-color: #F5F5F5;
+  padding: 10px;
+}
+html.dark .markdown blockquote{
+  background-color: #2B2D31;
+}
+html.dark .markdown pre{
+  background-color: #2B2D31;
+}
+textarea::-webkit-scrollbar{
+  width: 0;
+  height: 0;
 }

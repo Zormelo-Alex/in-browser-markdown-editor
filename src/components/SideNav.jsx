@@ -2,31 +2,52 @@ import React from "react";
 import { iconDocument, logo } from "../assets";
 import Toggle from "../baseComponents/Toggle";
 
-const SideNav = ({ handleDarkSwitch, isDark, data, handleSelected }) => {
+const SideNav = ({
+  handleDarkSwitch,
+  isDark,
+  data,
+  handleSelected,
+  setIsNavOpen,
+  addDocument,
+  isEmpty
+}) => {
   return (
-    <div className="bg-primaryDark h-full relative w-[65dvw] p-4 pt-8">
+    <div className="bg-primaryDark h-full relative w-[65dvw] md:w-[35dvw] lg:w-[20dvw] p-4 pt-8">
       <div className="h-[14px]">
         <img src={logo} className="h-full object-cover" alt="logo" />
       </div>
       <h3 className="text-textSecondary uppercase font-medium text-[16px] my-8">
         my documents
       </h3>
-      <button className="bg-buttonPrimary mb-6 w-full py-2 rounded-[4px] text-white capitalize text-[15px]">
+      <button
+        className="bg-buttonPrimary hover:bg-primaryHover transition-all ease-in mb-6 w-full py-2 rounded-[4px] text-white capitalize text-[15px]"
+        onClick={(e) => {
+          e.preventDefault();
+          addDocument();
+        }}
+      >
         {" "}
         + New document
       </button>
       <div className="flex flex-col gap-4">
         {data &&
           data.map((item, index) => (
-            <div className="flex items-center gap-5 text-white cursor-pointer" key={index} onClick={()=> {
-              handleSelected(index)
-            }}>
+            <div
+              className="flex items-center gap-5 text-white cursor-pointer hover:border-b border-secondaryDark ease-in transition-all"
+              key={index}
+              onClick={() => {
+                handleSelected(index);
+                setIsNavOpen(false);
+              }}
+            >
               <div>
                 <img src={iconDocument} alt="icon" />
               </div>
               <div>
-                <p className="text-textSecondary text-[13px]">{item.createdAt}</p>
-                <h4 className="text-[15px]">{item.name}</h4>
+                <p className="text-textSecondary text-[13px]">
+                  {item?.createdAt}
+                </p>
+                <h4 className="text-[15px]">{item?.name}</h4>
               </div>
             </div>
           ))}
