@@ -21,26 +21,26 @@ function App() {
   const [selectedID, setSelectedID] = useState(0);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleDarkSwitch = (e) => {
+  const handleDarkSwitch = (e: any) => {
     e.preventDefault();
     setIsdark(!isdark);
   };
 
-  const handleChangeSelected = (id) => {
+  const handleChangeSelected = (id: any) => {
     setSelectedID(id);
     setSelected(documentData[id]);
   };
 
-  const handleTextUpdate = (text) => {
-    setSelected((prev) => ({
+  const handleTextUpdate = (text: any) => {
+    setSelected((prev: any) => ({
       ...prev,
       content: text,
     }));
   };
 
-  const handleNameUpdate = (name) => {
+  const handleNameUpdate = (name: any) => {
     // console.log(name);
-    setSelected((prev) => ({
+    setSelected((prev: any) => ({
       ...prev,
       name: name,
     }));
@@ -48,8 +48,8 @@ function App() {
 
   const handleSave = () => {
     // console.log(selected)
-    setDocumentData((prev) =>
-      prev.map((item, index) => (index == selectedID ? selected : item))
+    setDocumentData((prev: any) =>
+      prev.map((item:any, index:any) => (index == selectedID ? selected : item))
     );
     toast.success("Document saved successfully!");
   };
@@ -73,7 +73,7 @@ function App() {
   };
 
   const handleDelete = () => {
-    const filter = documentData.filter((data, index) => index != selectedID);
+    const filter = documentData.filter((data:any, index:any) => index != selectedID);
     setDocumentData(filter);
     setSelectedID(0);
     setModalOpen(false);
