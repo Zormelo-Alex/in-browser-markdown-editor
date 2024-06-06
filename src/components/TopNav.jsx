@@ -53,10 +53,10 @@ const TopNav = ({
           </div>
         </div>
         <div className="flex gap-4 items-center pr-2 cursor-pointer">
-          <div onClick={() => showDeleteModal(true)}>
+          <div onClick={() => showDeleteModal(true)} title="Delete document">
             <img src={iconDelete} alt="icon" />
           </div>
-          <div className="p-3 bg-buttonPrimary hover:bg-primaryHover transition-all ease-in rounded-[4px] flex text-white gap-2 capitalize cursor-pointer" onClick={save}>
+          <div className="p-3 bg-buttonPrimary hover:bg-primaryHover transition-all ease-in rounded-[4px] flex text-white gap-2 capitalize cursor-pointer" onClick={save} title="Save document">
             <img src={iconSave} alt="icon" />
             <span className="hidden md:block">Save changes</span> 
           </div>

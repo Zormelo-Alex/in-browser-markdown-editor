@@ -146,8 +146,6 @@ function App() {
                 selected={selected}
                 handleTextChange={handleTextUpdate}
                 isEmpty={isEmpty}
-                isNav={isNavOpen}
-                setNav={setIsNavOpen}
               />
             </div>
             <DeleteModal

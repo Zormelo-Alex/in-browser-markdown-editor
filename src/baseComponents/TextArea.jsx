@@ -7,6 +7,7 @@ const TextArea = ({ content, handleTextChange, isEmpty }) => {
       <textarea
         name=""
         id=""
+        autoFocus
         value={content || ""}
         disabled={isEmpty}
         onChange={(e)=> handleTextChange(e.target.value)}

@@ -3,7 +3,7 @@ import { iconHidePreview, iconShowPreview } from "../assets";
 import MarkDown from "../baseComponents/MarkDown";
 import TextArea from "../baseComponents/TextArea";
 
-const Home = ({ selected, handleTextChange, isEmpty, setNav, isNav }) => {
+const Home = ({ selected, handleTextChange, isEmpty}) => {
   const [isPreview, setisPreview] = useState(true);
 
   return (
@@ -20,9 +20,9 @@ const Home = ({ selected, handleTextChange, isEmpty, setNav, isNav }) => {
           className="cursor-pointer"
         >
           {isPreview ? (
-            <img src={iconHidePreview} className="h-[16px]" alt="" />
+            <img src={iconHidePreview} className="h-[16px]" alt="" title="Hide preview"/>
           ) : (
-            <img src={iconShowPreview} className="h-[14px]" alt="" />
+            <img src={iconShowPreview} className="h-[14px]" alt="" title="Show preview"/>
           )}
         </div>
       </div>
@@ -55,9 +55,9 @@ const Home = ({ selected, handleTextChange, isEmpty, setNav, isNav }) => {
             className="cursor-pointer"
           >
             {isPreview ? (
-              <img src={iconHidePreview} className="h-[16px]" alt="" />
+              <img src={iconHidePreview} className="h-[16px]" alt="" title="Hide preview"/>
             ) : (
-              <img src={iconShowPreview} className="h-[14px]" alt="" />
+              <img src={iconShowPreview} className="h-[14px]" alt="" title="Show preview"/>
             )}
           </div>
         </div>
